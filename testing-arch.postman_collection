@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "d8cfa8ca-0c8a-42c9-8155-b70522558c15",
+    "name": "testing-arch",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56009803",
+    "_collection_link": "https://go.postman.co/collection/56009803-d8cfa8ca-0c8a-42c9-8155-b70522558c15?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"fullName\": \"anas\",\r\n  \"userName\": \"anas\",\r\n  \"email\": \"anas@gmail.com\",\r\n  \"password\": \"Zsas@1213321\",\r\n  \"permissions\": [\r\n    {\r\n      \"permissionId\": 1,\r\n      \"operations\": [1, 2]\r\n    },\r\n    {\r\n      \"permissionId\": 2,\r\n      \"operations\": [3]\r\n    }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/auth/v1/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "auth",
+                "v1",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \"identifier\": \"admin\",\r\n    \"password\": \"Admin@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/auth/v1/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "auth",
+                "v1",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "without-username",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \"identifier\": \"\",\r\n    \"password\": \"Admin@1234\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/dashboard/auth/v1/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "dashboard",
+                    "auth",
+                    "v1",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "146"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"92-G06t8uPaQhVaA8wjC6TVIgQDIl4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 20 Oct 2026 12:46:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"key\": \"VALIDATION_FAILED\",\n    \"message\": \"Request validation failed\",\n    \"errors\": {\n        \"identifier\": \"Username must be at least 3 characters\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "refresh",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/auth/v1/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "auth",
+                "v1",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "create-category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Electronics\",\r\n  \"description\": \"All electronic devices and gadgets\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/categories/v1/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "categories",
+                "v1",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-categories",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "get-category-by-id",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "delete-category",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlck5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJpc0FkbWluIjp0cnVlLCJwZXJtaXNzaW9ucyI6W3sicGVybWlzc2lvbklkIjoxLCJwZXJtaXNzaW9uTmFtZSI6InVzZXJzIiwib3BlcmF0aW9ucyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LHsicGVybWlzc2lvbklkIjoyLCJwZXJtaXNzaW9uTmFtZSI6InByb2R1Y3RzIiwib3BlcmF0aW9ucyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LHsicGVybWlzc2lvbklkIjozLCJwZXJtaXNzaW9uTmFtZSI6ImNhdGVnb3JpZXMiLCJvcGVyYXRpb25zIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXX1dLCJpYXQiOjE3OTI0OTc4NjksImV4cCI6MTc5MjQ5ODc2OX0._fNScM-em40b-xjLgjvtgX2_w2VUm-_pExxGvQRGOyM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/categories/v1/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "categories",
+                "v1",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "create-product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/categories/v1/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "categories",
+                "v1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-products",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "getProductById",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "updateProduct",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlck5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJpc0FkbWluIjp0cnVlLCJwZXJtaXNzaW9ucyI6W3sicGVybWlzc2lvbklkIjoxLCJwZXJtaXNzaW9uTmFtZSI6InVzZXJzIiwib3BlcmF0aW9ucyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LHsicGVybWlzc2lvbklkIjoyLCJwZXJtaXNzaW9uTmFtZSI6InByb2R1Y3RzIiwib3BlcmF0aW9ucyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LHsicGVybWlzc2lvbklkIjozLCJwZXJtaXNzaW9uTmFtZSI6ImNhdGVnb3JpZXMiLCJvcGVyYXRpb25zIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXX1dLCJpYXQiOjE3OTI0OTg5MTEsImV4cCI6MTc5MjQ5OTgxMX0.iphNdLbiuDINnaY88H-twTOD5nNqoXCUYkxgSl4rxIw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"price\": 899.99\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/products/v1/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "products",
+                "v1",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteProduct",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/dashboard/products/v1/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "dashboard",
+                "products",
+                "v1",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
