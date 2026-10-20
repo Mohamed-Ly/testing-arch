@@ -1,0 +1,30 @@
+export const PRODUCT_MESSAGES = Object.freeze({
+  SUCCESS: {
+    CREATED: "Product created successfully",
+    UPDATED: "Product updated successfully",
+    DELETED: "Product deleted successfully",
+    ALL_FETCHED: "Products retrieved successfully",
+    ONE_FETCHED: "Product retrieved successfully",
+  },
+  ERROR: {
+    NOT_FOUND: "Product not found",
+    NAME_IN_USE: "This product name already exists",
+    CATEGORY_NOT_FOUND: "Category not found",
+    INSUFFICIENT_STOCK: "Insufficient stock",
+  },
+  VALIDATION: {
+    TYPE_OBJECT: "Body data must be an object",
+    NO_EXTRA_FIELDS: "Unrecognized fields are not allowed",
+    NAME_STRING: "Name must be a text string",
+    NAME_LENGTH: "Name must be at least 2 characters long",
+    NAME_REQUIRED: "Name is required",
+    DESCRIPTION_STRING: "Description must be a text string",
+    PRICE_NUMBER: "Price must be a number",
+    PRICE_MIN: "Price must be positive",
+    PRICE_REQUIRED: "Price is required",
+    STOCK_INTEGER: "Stock must be an integer",
+    STOCK_MIN: "Stock cannot be negative",
+    CATEGORY_ID_REQUIRED: "Category ID is required",
+    CATEGORY_ID_INTEGER: "Category ID must be a valid number",
+  },
+});

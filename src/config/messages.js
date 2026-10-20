@@ -1,0 +1,90 @@
+// ======================= MESSAGES & ERROR CODES =======================
+// Centralized error messages, success messages, and validation messages
+// Used throughout the application for consistent error handling
+
+export const ERROR_MESSAGES = Object.freeze({
+  INVALID_ID: "Invalid id",
+  INVALID_TOKEN: "Invalid token",
+  UNAUTHORIZED: "Unauthorized",
+  FORBIDDEN: "Forbidden",
+  INVALID_REQUEST: "Invalid request",
+  INTERNAL_SERVER_ERROR: "Internal server error",
+  TOO_MANY_REQUESTS: "Too many requests from this IP, please try again later",
+  VALIDATION_FAILED: "Request validation failed",
+  REQUIRED_ID_PARAM: "Required id parameter is missing",
+  REQUIRED_REFRESH_TOKEN: "Refresh token is required",
+  AUTHORIZATION_MUST_BE_STRING: "Authorization header must be a string",
+  AUTHORIZATION_REQUIRED: "Authorization header is required",
+  HEADER_MUST_BE_OBJECT: "Headers must be an object",
+  ID_MUST_BE_INTEGER: "ID must be an integer",
+  ID_MINIMUM: "ID must be at least 1",
+  PAGE_MUST_BE_INTEGER: "Page must be an integer",
+  PAGE_MINIMUM: "Page must be at least 1",
+  SIZE_MUST_BE_INTEGER: "Size must be an integer",
+  SIZE_MINIMUM: "Size must be at least 5",
+  INVALID_EMAIL_OR_PASSWORD: "Invalid email or password",
+  EMAIL_ALREADY_EXISTS: "Email already exists",
+  USERNAME_ALREADY_EXISTS: "Username already exists",
+  USER_NOT_FOUND: "User not found",
+  UPDATE_FAILED: "Update failed, please try again",
+  PERMISSION_DENIED: "You do not have permission to perform this action",
+  PAGE_PERMISSION_DENIED: "You do not have permission to access this page",
+  UNRECOGNIZED_FIELDS: "Unrecognized fields are not allowed",
+  CANNOT_DELETE_OWN_ACCOUNT: "You cannot delete your own account",
+  INVALID_DELETE_DATA: "Invalid data provided for deletion. Please check your input and try again.",
+  INVALID_UPDATE_DATA: "Invalid data provided for update. Please check your input and try again.",
+  NO_TOKEN_PROVIDED: "No authorization token provided",
+  DELETE_FILE_FAILED: "Failed to delete the old file from server storage",
+  IMAGE_REQUIRED: "Please upload an image file",
+  INVALID_FILE_TYPE: "Invalid file type! Please upload only images.",
+  MULTER_ERROR: "An error occurred during file upload configuration",
+  // Required
+  REQUIRED_FULLNAME: "Name is required",
+  REQUIRED_USERNAME: "Username is required",
+  REQUIRED_EMAIL: "Email is required",
+  REQUIRED_PASSWORD: "Password is required",
+  REQUIRED_TOKEN: "Token is required",
+  REQUIRED_IDENTIFIER: "Email or username is required",
+  // Type
+  USERNAME_STRING: "Username must be a text string",
+  EMAIL_STRING: "Email must be a text string",
+  PASSWORD_STRING: "Password must be a text string",
+  TOKEN_STRING: "Token must be a text string",
+  TYPE_STRING: "Type must be a text string",
+  TYPE_OBJECT: "Body data must be an object",
+  // MinLength
+  MIN_LENGTH_NAME: "Name must be at least 3 characters long",
+  MIN_LENGTH_USERNAME: "Username must be at least 3 characters long",
+  MIN_LENGTH_TOKEN: "Token is too short",
+  MIN_LENGTH_PASSWORD: "Password must be at least 6 characters",
+  // Pattern / Format
+  INVALID_EMAIL: "Please enter a valid email address",
+  WEAK_PASSWORD: "Password must contain numbers, letters, and be stronger",
+  INVALID_TOKEN: "Invalid token format",
+  // AdditionalProperties
+  NO_EXTRA_FIELDS: "Unrecognized fields are not allowed",
+});
+
+export const SUCCESS_MESSAGES = Object.freeze({
+  OPERATION_SUCCESSFUL: "Operation completed successfully",
+});
+
+export const VALIDATION_MESSAGES = Object.freeze({
+  REQUIRED: "This field is required",
+  REQUIRED_EMAIL: "Email is required",
+  REQUIRED_PASSWORD: "Password is required",
+  USERNAME_STRING: "Username must be a string",
+  USERNAME_MIN_LENGTH: "Username must be at least 3 characters",
+  USERNAME_NO_SPACES: "Username cannot contain spaces",
+  USERNAME_REQUIRED: "Username is required",
+  EMAIL_FORMAT: "Email must be valid",
+  NUMBER_TYPE: "Must be a number",
+  WEAK_PASSWORD: "Password must contain numbers, letters, and be stronger",
+  DESCRIPTION_STRING: "Description must be text",
+  NAME_STRING: "Name must be text",
+  NAME_MIN_LENGTH: "Name must be at least 2 characters",
+  PRICE_NUMBER: "Price must be a number",
+  PRICE_MIN: "Price must be positive",
+  CATEGORY_ID_REQUIRED: "Category ID is required",
+  CATEGORY_ID_INTEGER: "Category ID must be a valid number",
+});
